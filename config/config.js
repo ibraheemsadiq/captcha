@@ -7,7 +7,7 @@ module.exports = function() {
     var config = {
         "host":"localhost",
         "username":"root",
-        "password":	"",
+        "password":	"useruser123",
         "database":	"captcha",
         "port": 3000
     };
