@@ -1,0 +1,68 @@
+<div class="container-fluid top" style="background: white; overflow: auto; height: 620px;" ng-controller="CaptchaController as vm">
+
+  <div>
+    <acme-navbar creation-date="main.creationDate"></acme-navbar>
+  </div>
+
+  <div class="text-center">
+    <h1>Captcha Objects</h1>
+    <div class="row ball-spin-fade-loader pull-right">
+      <button type="button" class="btn btn-success " ng-click="vm.showAdvanced($event)">Add Data</button>
+    </div>
+    <script type="text/ng-template" id="dialog.tmpl.html">
+      <md-dialog aria-label="Carica foto">
+        <form ng-cloak role="form" style="max-width: 100% !important;">
+          <md-toolbar>
+            <div class="md-toolbar-tools">
+              <h2>Upload photo</h2>
+              <span flex></span>
+              <md-button class="md-icon-button" ng-click="cancel()">
+                <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+              </md-button>
+            </div>
+          </md-toolbar>
+          <md-dialog-content>
+            <div class="md-dialog-content">
+              <h1>Object Upload</h1>
+              <md-input-container>
+                <label>Object Name</label>
+                <input ng-model="name">
+              </md-input-container>
+              <br/><br/>
+              <input
+                type="file"
+                ngf-select
+                ng-model="file"
+                name="file"
+                ngf-max-size="20MB"
+              />
+            </div>
+          </md-dialog-content>
+          <md-dialog-actions layout="row">
+            <span flex></span>
+            <md-button ng-click="submit()">Upload</md-button>
+          </md-dialog-actions>
+        </form>
+      </md-dialog>
+    </script>
+    <!-- exact table from live demo -->
+    <md-table-container >
+      <table md-table>
+        <thead md-head >
+        <!-- when the user clicks this cell, the myOrder variable will get the value 'nameToLower' -->
+        <th md-column>object name</th>
+        <!-- the variable myOrder will not be changed when this cell is clicked -->
+        <th md-column>Source</th>
+
+        </thead>
+        <tbody md-body>
+        <!-- we can let ng-repeat sort the columns for us -->
+        <tr md-row md-select="object" md-select-id="name" md-auto-select ng-repeat="object in vm.data">
+          <td md-cell>{{object.object}}</td>
+          <td md-cell>{{object.src}}</td>
+        </tr>
+        </tbody>
+      </table>
+    </md-table-container>
+  </div>
+</div>
