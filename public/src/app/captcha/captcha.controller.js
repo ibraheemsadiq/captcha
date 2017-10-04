@@ -75,7 +75,7 @@
 
         vm.loader = true;
 
-        var Api = $resource('http://localhost:3000/captcha');
+        var Api = $resource('/captcha');
 
         Api.get({operation: 'del', id: id}).$promise.then(function(data) {
           vm.loader = false;
@@ -95,7 +95,7 @@
     }
     vm.getcaptcha = function () {
 
-      var Api = $resource("http://localhost:3000/captcha");
+      var Api = $resource("/captcha");
       Api.query({ method: 'GET', isArray: false, operation: 'view' }).$promise.then(function(data) {
         vm.loader = false;
         var limit = Math.floor(($window.innerHeight-400) / 41);
@@ -147,7 +147,7 @@
 
       vm.loader = true;
 
-      var Api = $resource('http://localhost:3000/captcha');
+      var Api = $resource('/captcha');
 
       Api.get({operation: operation, data: vm.data}).$promise.then(function(data) {
         vm.loader = false;

@@ -32,7 +32,7 @@
 
     vm.getcaptcha = function () {
 
-      var Api = $resource("http://localhost:3000/captcha");
+      var Api = $resource("/captcha");
       Api.query({ method: 'GET', isArray: false, operation: 'view' }).$promise.then(function(data) {
         vm.loader = false;
         var limit = Math.floor(($window.innerHeight-400) / 41);

@@ -190,7 +190,7 @@
 
         console.log(username+password);
         return $http({
-          url: 'http://localhost:3000/users',
+          url: '/users',
           method: "GET",
           params: {username: username, password: password, operation: operation }
         });
