@@ -17,7 +17,8 @@
         $http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.globals.currentUser.authdata;
 
       }
-      var restrictedPage = $location.path().indexOf(['/admin', '/']) === -1?ture:false;
+      var restrictedPage = ($location.path().indexOf(['/admin', '/']) == -1) ?ture:false;
+      alert(restrictedPage);
       var loggedIn = $rootScope.globals.currentUser;
       if (restrictedPage && !loggedIn) {
         $location.path('/admin');
