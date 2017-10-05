@@ -9,7 +9,7 @@ module.exports = function() {
         "username":"root",
         "password":	"useruser123",
         "database":	"captcha",
-        "port": 3000
+        "port": 80
     };
     return config;
 }
