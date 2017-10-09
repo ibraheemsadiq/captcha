@@ -26,7 +26,7 @@
     <form>
       <div class="hand"></div>
       <div class="hand rgt"></div>
-      <h1>Captcha Solver</h1>
+      <h1>Hybrid Captcha</h1>
       <h7 layout="row" layout-margin class="_md-subheader-content">Enter the name of the object that does not correspond to the images on the left</h7>
 
       <div layout="row" layout-align="start center" ng-repeat="data in vm.data">
@@ -43,7 +43,7 @@
       <div layout="row" layout-margin layout-align="center center">
         <div class="form-group" flex="75">
           <input id="object" autocomplete="off" ng-model="vm.name" type="text" required="required" class="form-control"/>
-          <label class="form-label">Enter the name of incorrect object</label>
+          <label class="form-label">Enter the name of the incorrect object</label>
           <p class="alert" id="alert">{{vm.alert}}</p>
           <button type="button" class="btn" ng-click="vm.generateObjects()">Generate </button>
           <button class="btn" id="solve">Solve </button>

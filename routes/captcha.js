@@ -36,6 +36,8 @@ router.get('/', function(req, res, next) {
     if(req.query.operation == 'add')
     {
         var data = JSON.parse(req.query.data);
+        console.log('sample data');
+        console.log(data);
         // force: true will drop the table if it already exists
         captcha.create(data).then(function(users) {
             res.send(JSON.stringify('ok'));
